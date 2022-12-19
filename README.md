@@ -9,12 +9,7 @@ Link: [Request_data](https://drive.google.com/open?id=17It9Ygf50fZeqDpJE9itaNx1f
 - Test Data: 1M
 
 ### Get The Data
-
-`cd Request-Predictor`
-
-`pip install gdown`
-
-`gdown --no-check-certificate --folder https://drive.google.com/drive/folders/17It9Ygf50fZeqDpJE9itaNx1fTZSzeGw`
+`sh download.sh`
 
 ### Train LGBM
 
