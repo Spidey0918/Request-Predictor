@@ -19,3 +19,6 @@ Link: [Request_data](https://drive.google.com/open?id=17It9Ygf50fZeqDpJE9itaNx1f
 ### Train LGBM
 
 `python .\lightgbm_training.py ..\request_data\Train\TSV.tsv 3-16 9 2 ./model 50 1 20 regression 0.17 10 4 1000 0 0 0 1 0 1`
+
+### Prediction
+`python .\lightgbm_prediction.py ..\request_data\Test\TSV.tsv .\model 3-16 9 0-2 ./output.csv`
