@@ -241,6 +241,7 @@ if __name__ =='__main__':
     model =  best_trial.user_attrs['model'] 
     filename = os.path.join(args.output_dir,'KeywordBaseline_XGB')
     pickle.dump(model, open(filename+'.sav', 'wb'))
+    model.save_model('model.json')
    
     artefacts = {'stats:':stats,
                 'model_artefacts':best_trial.user_attrs,

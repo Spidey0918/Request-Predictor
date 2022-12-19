@@ -96,7 +96,9 @@ if __name__ =='__main__':
     print('Positive Rate - ', stats['pos_rate'])
     print('-------------------------------------------')
 
-    model = pd.read_pickle(os.path.join(args.model_dir, args.model_file))
+    #model = pd.read_pickle(os.path.join(args.model_dir, args.model_file))
+    model = xgb.Booster()
+    model.load_model('model.json')
     X_eval, y_eval, AccountIds = prepare_data(data)
     metrics = evaluate(X_eval, y_eval, model, AccountIds)
     print('-------------------------------------------')
