@@ -15,6 +15,10 @@ Link: [Request_data](https://drive.google.com/open?id=17It9Ygf50fZeqDpJE9itaNx1f
 
 `python .\lightgbm_training.py ..\request_data\Train\TSV.tsv 3-16 9 2 ./model 50 1 20 regression 0.17 10 4 1000 0 0 0 1 0 1`
 
+(Using Optuna)
+
+`python .\lightgbm_training_optuna.py ..\request_data\Train\TSV.tsv 3-16 9 2 ./optuna_model ./optuna_params.txt  50 1 5,10,15,20,30 regression 100 0.05,0.2 7,128,1 3,7,1 200,10000,100 0,1000,5 0,1000,5 0,0,1 0.8,1.0,0.1 0,1,2,3,4 0.8,1.0,0.1`
+
 ### Prediction
 `python .\lightgbm_prediction.py ..\request_data\Test\TSV.tsv .\model 3-16 9 0-2 ./output.csv`
 
