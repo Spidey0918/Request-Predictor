@@ -1,0 +1,15 @@
+	Feature	Split Importance	Feature	Gain Importance
+3	Request_UserLongitude	70	Request_UserLongitude	4066.8544014692307
+2	Request_UserLatitude	58	Request_UserLatitude	2845.1824795007706
+6	RefreshType	56	RefreshType	70368.18928813934
+11	ImpCount7d	51	ImpCount7d	9409.662308216095
+0	Request_Hour	45	Request_Hour	6354.876816749573
+9	ImpCount3d	39	ImpCount3d	78690.3238697052
+5	Request_Offset	36	Request_Offset	23753.685750961304
+13	ActiveDays	20	ActiveDays	1733.9465942382812
+1	Request_IsWeekend	17	Request_IsWeekend	2372.421396255493
+4	Request_Count	17	Request_Count	569.1594734191895
+7	ImpCount1d	14	ImpCount1d	3013.9345207214355
+12	ClickCount7d	12	ClickCount7d	565.09610414505
+10	ClickCount3d	7	ClickCount3d	1385.1566200256348
+8	ClickCount1d	3	ClickCount1d	44.354000091552734

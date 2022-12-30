@@ -1,0 +1,1 @@
+{"n_estimators": 50, "learning_rate": 0.18248267652907382, "num_leaves": 62, "max_depth": 7, "min_data_in_leaf": 200, "reg_alpha": 45, "reg_lambda": 775, "min_gain_to_split": 0.0, "subsample": 0.9, "subsample_freq": 0, "colsample_bytree": 0.8, "early_stopping_rounds": 10}

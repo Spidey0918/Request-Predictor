@@ -5,8 +5,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
 from parsing_utility import index_range_parser
 import lightgbm as lgbm
+from lightgbm.callback import record_evaluation
 import sys
+from tensorboardX import SummaryWriter
 
+train_writer = SummaryWriter(log_dir='./logs/train')
+val_writer = SummaryWriter(log_dir='./logs/val')
 
 def lightgbm_training(features, labels, outputs, n_estimators, verbose, early_stopping_rounds, objective,
                       learning_rate, num_leaves, max_depth, min_data_in_leaf,
@@ -27,13 +31,21 @@ def lightgbm_training(features, labels, outputs, n_estimators, verbose, early_st
         "subsample": subsample,
         "subsample_freq": subsample_freq,
         "colsample_bytree": colsample_bytree,
-        # "early_stopping_rounds": early_stopping_rounds
+        "random_state":2022
     }
 
+    log = {}
     model = lgbm.LGBMClassifier(objective=objective, **params)
     model.fit(features, labels, eval_set=[
-              (features_test, labels_test)], early_stopping_rounds=early_stopping_rounds, verbose=verbose)
+              (features,labels),(features_test, labels_test)], early_stopping_rounds=early_stopping_rounds, callbacks=[record_evaluation(log)],verbose=verbose)
     model.booster_.save_model(outputs)
+
+    for i, loss in enumerate(log['training']['l2']):
+        train_writer.add_scalar('logloss', loss, i)
+        train_writer.add_scalar('train_logloss', loss, i)
+    for i, loss in enumerate(log['valid_1']['l2']):
+        val_writer.add_scalar('logloss', loss, i)
+        val_writer.add_scalar('val_logloss', loss, i)
 
     feature_importances = model.booster_.feature_importance(
         importance_type='gain')
@@ -48,7 +60,7 @@ def lightgbm_training(features, labels, outputs, n_estimators, verbose, early_st
 
 
 if __name__ == '__main__':
-    input_data = pd.read_csv(sys.argv[1], header=0, sep='\t')
+    input_data = pd.read_csv(sys.argv[1], header=None, sep='\t')
     feature_indices = index_range_parser(sys.argv[2])
     label_ind = int(sys.argv[4])
     n_estimators = int(sys.argv[6])
