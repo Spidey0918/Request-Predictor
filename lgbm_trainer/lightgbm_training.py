@@ -48,7 +48,7 @@ def lightgbm_training(features, labels, outputs, n_estimators, verbose, early_st
 
 
 if __name__ == '__main__':
-    input_data = pd.read_csv(sys.argv[1], header=0, sep='\t')
+    input_data = pd.read_csv(sys.argv[1], header=None, sep='\t')
     feature_indices = index_range_parser(sys.argv[2])
     label_ind = int(sys.argv[4])
     n_estimators = int(sys.argv[6])
