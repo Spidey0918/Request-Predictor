@@ -31,3 +31,36 @@ Link: [Request_data](https://drive.google.com/open?id=17It9Ygf50fZeqDpJE9itaNx1f
 `python .\shap_importance.py ..\request_data\Test\TSV.tsv .\model 3-16 9 TraceId,Request_UserId,IsShown,Request_Hour,Request_IsWeekend,Request_UserLatitude,Request_UserLongitude,Request_Count,Request_Offset,RefreshType,ImpCount1d,ClickCount1d,ImpCount3d,ClickCount3d,ImpCount7d,ClickCount7d,ActiveDays shap_importance.tsv`
 
 
+
+### Train XGBoost
+
+Enter the trainer
+
+`cd xgboost_trainer`
+
+Tuned used Optuna
+
+'python train_XGBoost_optuna.py'
+
+Best params training: change the config in the code file
+
+`python train_XGBoost.py`
+
+### Prediction
+
+`python XGBoost_prediction.py ./TSV_test.tsv ./model 3-16 9 0-2 xgboost_prediction.tsv`
+
+### Explainer
+
+Note that XGBoost is not compatible with package shap, so there is no shap importance for XGBoost.
+
+`python .\feature_importance.py ./model Request_Hour,Request_IsWeekend,Request_UserLatitude,Request_UserLongitude,Request_Count,Request_Offset,RefreshType,ImpCount1d,ClickCount1d,ImpCount3d,ClickCount3d,ImpCount7d,ClickCount7d,ActiveDays feature_importance.tsv`
+
+### Cal_PR_AUC
+`python ./cal_pr_auc.py ./output.csv 3 2 ./metric.tsv ./roc_curve.pdf ./roc.tsv ./best_roc.tsv`
+
+
+
+
+
+
