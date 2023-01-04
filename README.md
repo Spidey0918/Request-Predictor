@@ -52,7 +52,7 @@ Best params training: change the config in the code file
 
 ### Explainer
 
-Note that XGBoost is not compatible with package shap, so there is no shap importance for XGBoost.
+XGBoost is imcompatible with package shap, so there is no shap importance for it.
 
 `python .\feature_importance.py ./model Request_Hour,Request_IsWeekend,Request_UserLatitude,Request_UserLongitude,Request_Count,Request_Offset,RefreshType,ImpCount1d,ClickCount1d,ImpCount3d,ClickCount3d,ImpCount7d,ClickCount7d,ActiveDays feature_importance.tsv`
 
