@@ -40,7 +40,7 @@ Enter the trainer
 
 Tuned used Optuna
 
-'python train_XGBoost_optuna.py'
+`python train_XGBoost_optuna.py`
 
 Best params training: change the config in the code file
 
