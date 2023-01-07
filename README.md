@@ -52,12 +52,14 @@ Best params model evaluation:
 
 ### Explainer
 
-XGBoost is imcompatible with package shap, so there is no shap importance for it.
+XGBoost is incompatible with package shap, so there is no shap importance for it.
 
 `python .\feature_importance.py ./model_xgb.sav Request_Hour,Request_IsWeekend,Request_UserLatitude,Request_UserLongitude,Request_Count,Request_Offset,RefreshType,ImpCount1d,ClickCount1d,ImpCount3d,ClickCount3d,ImpCount7d,ClickCount7d,ActiveDays feature_importance.tsv`
 
 ### Cal_PR_AUC
-`python ./cal_pr_auc.py ./output.csv 3 2 ./metric.tsv ./roc_curve.pdf ./roc.tsv ./best_roc.tsv`
+`python ./cal_pr_auc.py ./xgboost_prediction.tsv 3 2 ./metric.tsv ./roc_curve.pdf ./roc.tsv ./best_roc.tsv`
+
+Do not forget to tune the threshold for best confusion matrix
 
 
 
