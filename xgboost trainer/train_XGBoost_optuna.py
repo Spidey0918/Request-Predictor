@@ -1,3 +1,4 @@
+# START: OWN CODE
 import os
 import pickle
 import sys
@@ -233,3 +234,4 @@ if __name__ == '__main__':
                  'hyperparameters': best_trial.params}
 
     pickle.dump(artefacts, open(os.path.join(args.output_dir, 'artefacts.pkl'), 'wb'))
+# END: OWN CODE
