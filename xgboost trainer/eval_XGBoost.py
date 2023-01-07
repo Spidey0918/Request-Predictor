@@ -8,9 +8,12 @@ import pandas as pd
 import xgboost as xgb
 from optuna.samplers import RandomSampler
 from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import roc_auc_score, auc
 from sklearn.metrics import precision_recall_curve
+import datetime
+from tensorboardX import SummaryWriter
 
 
 def get_best_trial(study):
@@ -164,7 +167,7 @@ if __name__ =='__main__':
     print('ROC-AUC', metrics['ROC-AUC'])
     print('Classification Report')
     print(metrics['Classification Report'])
-    print('Confusion Matrix')
+    print('Confusion Matrix with default threshold')
     print(metrics['Confusion Matrix'])
     print()
 
