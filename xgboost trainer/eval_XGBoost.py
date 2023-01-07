@@ -1,3 +1,4 @@
+# START: OWN CODE
 import os
 import pickle
 import sys 
@@ -80,9 +81,10 @@ def get_stats(data):
         }
 
     return stats
-
+# END: OWN CODE
 
 # start: NOT own code
+# https://github.com/dmlc/xgboost/issues/5727
 class TensorBoardCallback(xgb.callback.TrainingCallback):
     def __init__(self, experiment: str = None, data_name: str = None):
         self.experiment = experiment or "logs"
@@ -112,7 +114,7 @@ class TensorBoardCallback(xgb.callback.TrainingCallback):
         return False
 # end: NOT own code
 
-
+# START: OWN CODE
 if __name__ =='__main__':
     # parameters setting
     parser = argparse.ArgumentParser()
@@ -172,3 +174,4 @@ if __name__ =='__main__':
     print()
 
     print('Done!')
+# END: OWN CODE
