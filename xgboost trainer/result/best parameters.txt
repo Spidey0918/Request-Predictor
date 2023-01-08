@@ -1,0 +1,4 @@
+n_estimators : 50
+gamma : 1.68
+lambda : 0.24
+learning_rate : 0.15917647476712105
