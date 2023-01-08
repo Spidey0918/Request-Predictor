@@ -1,3 +1,4 @@
+# START: OWN CODE
 def index_range_parser(range_string):
     ranges = [index.strip() for index in range_string.split(',')]
     expanded_range = []
@@ -11,3 +12,4 @@ def index_range_parser(range_string):
             end_ind = int(indices[1])
         expanded_range.extend(range(start_ind, end_ind + 1))
     return expanded_range
+# END: OWN CODE
