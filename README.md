@@ -29,6 +29,10 @@ Link: [Request_data](https://drive.google.com/open?id=17It9Ygf50fZeqDpJE9itaNx1f
 ### Prediction
 `python .\lightgbm_prediction.py ..\request_data\Test\TSV.tsv .\model 3-16 9 0-2 ./output.csv`
 
+(Predict With Threshold)
+
+`python .\lightgbm_prediction_with_threshold.py ..\request_data\Test\TSV.tsv .\model 3-16 9 0-2 ./pred.tsv TraceId,Request_UserId,IsShown,Request_Hour,Request_IsWeekend,Request_UserLatitude,Request_UserLongitude,Request_Count,Request_Offset,RefreshType,ImpCount1d,ClickCount1d,ImpCount3d,ClickCount3d,ImpCount7d,ClickCount7d,ActiveDays 0.29735`
+
 ### Cal_PR_AUC
 `python .\cal_pr_auc.py ..\lgbm_trainer\output.csv 3 2 ./metric.tsv ./roc_curve.pdf ./roc.tsv ./best_roc.tsv`
 
