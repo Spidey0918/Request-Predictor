@@ -1,3 +1,4 @@
+# START: OWN CODE
 import numpy as np
 import pandas as pd
 import shap
@@ -5,24 +6,6 @@ import sys
 import lightgbm as lgb
 from parsing_utility import index_range_parser
 pd.options.display.float_format = '{:.10f}'.format
-
-# features = [
-#     "TraceId",
-#     "request_id",
-#     "Request_UserId",
-#     "Request_Anid",
-#     "Request_ImpressionId",
-#     "Request_Hour",
-#     "Request_IsWeekend",
-#     "Request_UserLatitude",
-#     "Request_UserLongitude",
-#     "Request_Count",
-#     "Request_Offset",
-#     "Request_IsNewSessionStarted",
-#     "RefreshType",
-#     "Request_HasBadge",
-#     "IsShown"
-# ]
 
 
 def get_feature_importance(data, shap_vals, topk=100):
@@ -52,3 +35,4 @@ if __name__ == "__main__":
     shap_importance = get_feature_importance(input_data, shap_val)
     shap_importance.to_csv(sys.argv[6], sep="\t", header=[
                            "Feature", "Shap Value"])
+# END: OWN CODE
