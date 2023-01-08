@@ -1,3 +1,4 @@
+# START: OWN CODE
 import pandas as pd
 import lightgbm as lgbm
 from parsing_utility import index_range_parser
@@ -20,3 +21,4 @@ if __name__ == '__main__':
     output_data = input_data.iloc[:, keep_columns_indices].copy()
     output_data['Score'] = predictions
     output_data.to_csv(sys.argv[6], sep='\t', index=False)
+# END: OWN CODE
