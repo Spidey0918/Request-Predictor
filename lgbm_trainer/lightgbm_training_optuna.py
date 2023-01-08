@@ -1,3 +1,4 @@
+# START: OWN CODE
 import pandas as pd
 from class_balancing import balance_data
 import numpy as np
@@ -190,4 +191,4 @@ if __name__ == '__main__':
     model = best_trial.user_attrs['model']
     model.save_model(outputs)
 
-    # lightgbm_training(input_data.iloc[:, feature_indices], input_data.iloc[:, label_ind], sys.argv[5] , n_estimators, verbose, early_stopping_rounds,objective)
+# END: OWN CODE
