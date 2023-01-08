@@ -1,3 +1,4 @@
+# START: OWN CODE
 import pandas as pd
 from class_balancing import balance_data
 import numpy as np
@@ -82,7 +83,7 @@ if __name__ == '__main__':
     if sys.argv[3] != '-':
         category_indices = index_range_parser(sys.argv[3])
         input_data = balance_data(input_data, label_ind, category_indices)
-
+# END: OWN CODE
     lightgbm_training(input_data.iloc[:, feature_indices], input_data.iloc[:, label_ind],
                       sys.argv[5], n_estimators, verbose, early_stopping_rounds, objective,
                       learning_rate, num_leaves, max_depth, min_data_in_leaf,
