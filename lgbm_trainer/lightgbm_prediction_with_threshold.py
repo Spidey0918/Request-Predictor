@@ -1,3 +1,4 @@
+# START: OWN CODE
 from string import digits
 import numpy as np
 import pandas as pd
@@ -45,3 +46,4 @@ if __name__ == '__main__':
         output_data['Score'] > threshold, 1, 0)
     compute_metrics(output_data, 'IsShown', 'IsShown_Pred')
     output_data.to_csv(sys.argv[6], sep='\t', index=False)
+# END: OWN CODE
