@@ -1,3 +1,4 @@
+# Start: OWN CODE
 import sys
 from sklearn import metrics
 import matplotlib.pyplot as plt
@@ -75,3 +76,4 @@ metric_f.write('ROC AUC\tPR AUC\tSampleNum\n')
 metric_f.write('{}\t{}\t{}\n'.format(auc, area, count))
 metric_f.close()
 
+# END: OWN CODE
