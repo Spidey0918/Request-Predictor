@@ -1,3 +1,4 @@
+# START: OWN CODE
 import pandas as pd
 import sys
 
@@ -26,3 +27,4 @@ if __name__ == '__main__':
     label_ind = int(sys.argv[2])
     input_data = balance_data(input_data, label_ind,14)
     input_data.to_csv(sys.argv[3], sep='\t', index=False)
+# END: OWN CODE
