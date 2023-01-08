@@ -1,3 +1,4 @@
+# START: OWN CODE
 import lightgbm as lgb
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -23,3 +24,5 @@ if __name__ == '__main__':
     ft_table = ft_table.sort_values(["Split Importance", "Gain Importance"], ascending=False)
 
     ft_table.to_csv(sys.argv[3], sep='\t')
+    
+# END: OWN CODE
